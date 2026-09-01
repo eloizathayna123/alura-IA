@@ -1,0 +1,112 @@
+@import url('https://googleapis.com');
+
+:root {
+    --cor-principal: #ffe5ec;     /* Rosa bem claro para os botões */
+    --cor-secundaria: rgba(255, 255, 255, 0.85); /* Fundo do cartão branco/rosa translúcido */
+    --cor-texto: #4a0e17;          /* Vinho escuro para excelente leitura */
+    --cor-detalhe: #ff4d6d;        /* Rosa choque/Rubi para títulos e destaques */
+    --cor-borda: #ffb3c6;          /* Rosa médio para bordas delicadas */
+}
+
+body {
+    /* Gradiente suave em tons de rosa que substitui a imagem antiga */
+    background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #ffb3c6);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Chakra Petch', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Criando corações e flores decorativas no fundo via CSS */
+body::before, body::after {
+    content: "🌸 💖 🌹 💝";
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.15;
+    pointer-events: none;
+    letter-spacing: 20px;
+}
+body::before { top: 10%; left: 10%; transform: rotate(-15deg); }
+body::after { bottom: 10%; right: 10%; transform: rotate(15deg); }
+
+.caixa-principal {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 30px; /* Bordas mais arredondadas e amigáveis */
+    box-shadow: 0 10px 32px rgba(255, 77, 109, 0.2); /* Sombra suave rosa */
+    border: 2px solid var(--cor-borda);
+    text-align: center;
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco elegante */
+    z-index: 2;
+}
+
+h1 {
+    color: var(--cor-detalhe);
+    font-size: 2.2rem;
+    margin-top: 0;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Pequeno detalhe floral abaixo do título principal */
+h1::after {
+    content: " 🌸";
+    font-size: 1.5rem;
+}
+
+.caixa-perguntas {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    min-height: 80px;
+    font-weight: bold;
+    color: #5c1d24;
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-borda);
+    padding: 15px;
+    border-radius: 50px; /* Botões em formato de pílula super modernos */
+    font-size: 1.05rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 179, 198, 0.3);
+}
+
+button:hover {
+    background-color: var(--cor-detalhe);
+    color: #ffffff;
+    border-color: var(--cor-detalhe);
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.4);
+}
+
+/* Ícone de coração que aparece ao passar o mouse nos botões */
+button:hover::after {
+    content: " ❤️";
+}
+
+.caixa-resultado {
+    display: none;
+    font-size: 1.4rem;
+    padding: 20px;
+    color: var(--cor-detalhe);
+    font-weight: bold;
+}
